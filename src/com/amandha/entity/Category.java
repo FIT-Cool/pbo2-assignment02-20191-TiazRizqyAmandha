@@ -10,4 +10,9 @@ public class Category {
     public void setNama(String nama) {
         this.nama = nama;
     }
+
+    @Override
+    public String toString() {
+        return nama;
+    }
 }
