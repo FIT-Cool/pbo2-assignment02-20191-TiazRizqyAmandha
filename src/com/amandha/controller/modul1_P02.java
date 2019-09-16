@@ -28,7 +28,6 @@ public class modul1_P02 implements Initializable {
     private TableColumn<Items, String> col01;
     private ObservableList<Items> items;
     private ObservableList<Category> categories;
-    private Items selectedItems;
     @FXML
     private TableColumn<Items, Double> col02;
     @FXML
@@ -117,8 +116,8 @@ public class modul1_P02 implements Initializable {
 
     @FXML
     private void tableClicked(MouseEvent mouseEvent) {
-        selectedItems = tbView.getSelectionModel().getSelectedItem();
-        if(selectedItems!=null){
+        Items selectedItems = tbView.getSelectionModel().getSelectedItem();
+        if(selectedItems !=null){
             txtName.setText(tbView.getSelectionModel().getSelectedItem().getNama());
             txtPrice.setText(String.valueOf(tbView.getSelectionModel().getSelectedItem().getHarga()));
             ComboBoxCat.setValue(tbView.getSelectionModel().getSelectedItem().getCategory());
