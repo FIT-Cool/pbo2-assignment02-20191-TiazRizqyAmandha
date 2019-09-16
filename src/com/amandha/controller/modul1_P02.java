@@ -1,3 +1,4 @@
+//Made By : Tiaz Rizqy Amandha 1772052
 package com.amandha.controller;
 
 import com.amandha.entity.Category;
@@ -47,7 +48,7 @@ public class modul1_P02 implements Initializable {
     @FXML
     private void SaveAction(ActionEvent actionEvent) {
         Alert a = new Alert(Alert.AlertType.ERROR);
-        if(txtName.getText() == null || txtPrice.getText() == null || ComboBoxCat.getValue() == null) {
+        if(txtName.getText().trim().isEmpty() || txtPrice.getText().trim().isEmpty() || ComboBoxCat.getValue() == null) {
             a.setContentText("Please fill name/ price/ category");
             a.showAndWait();
         }
@@ -85,6 +86,7 @@ public class modul1_P02 implements Initializable {
             Items c = data.getValue();
             return new SimpleStringProperty(c.getCategory().getNama());
         });
+        update.setDisable(true);
     }
 
 
@@ -126,6 +128,7 @@ public class modul1_P02 implements Initializable {
                 categories.add(c);
             }
         }
+        txtCN.clear();
 
     }
 
